@@ -48,9 +48,9 @@ export const userSchema = z.object({
     .toLowerCase(),
 
   phone: z.string()
-    .optional()
+    .min(1, 'Telefone é obrigatório')
     .refine(
-      (val) => !val || val === '' || phoneRegex.test(val),
+      (val) => phoneRegex.test(val),
       'Telefone inválido. Use o formato (XX) XXXXX-XXXX'
     ),
 
@@ -59,42 +59,41 @@ export const userSchema = z.object({
   }),
 
   cpf: z.string()
-    .optional()
+    .min(1, 'CPF é obrigatório')
     .refine(
-      (val) => !val || val === '' || cpfRegex.test(val),
+      (val) => cpfRegex.test(val),
       'CPF inválido. Use o formato XXX.XXX.XXX-XX'
     )
     .refine(
-      (val) => !val || val === '' || validateCPF(val),
+      (val) => validateCPF(val),
       'CPF inválido'
     ),
 
-  age: z.number()
+  age: z.number({
+      required_error: 'Idade é obrigatória',
+      invalid_type_error: 'Idade deve ser um número'
+    })
     .int('Idade deve ser um número inteiro')
     .min(18, 'Idade mínima é 18 anos')
-    .max(120, 'Idade máxima é 120 anos')
-    .optional(),
+    .max(120, 'Idade máxima é 120 anos'),
 
   cep: z.string()
-    .optional()
+    .min(1, 'CEP é obrigatório')
     .refine(
-      (val) => !val || val === '' || cepRegex.test(val),
+      (val) => cepRegex.test(val),
       'CEP inválido. Use o formato XXXXX-XXX'
     ),
 
   state: z.string()
-    .optional()
+    .min(1, 'Estado é obrigatório')
     .refine(
-      (val) => !val || val === '' || val.length === 2,
+      (val) => val.length === 2,
       'Estado deve ter 2 caracteres'
     ),
 
   address: z.string()
-    .optional()
-    .refine(
-      (val) => !val || val === '' || (val.length >= 5 && val.length <= 200),
-      'Endereço deve ter entre 5 e 200 caracteres'
-    ),
+    .min(5, 'Endereço deve ter no mínimo 5 caracteres')
+    .max(200, 'Endereço deve ter no máximo 200 caracteres'),
 
   complement: z.string()
     .optional()

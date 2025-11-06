@@ -218,7 +218,7 @@ export function UserForm({ user, clientes }: { user?: User; clientes: Cliente[] 
         </div>
 
         <div>
-          <label className="block text-sm text-gray-400 mb-2">Telefone</label>
+          <label className="block text-sm text-gray-400 mb-2">Telefone *</label>
           <input
             type="tel"
             {...register('phone')}
@@ -284,7 +284,7 @@ export function UserForm({ user, clientes }: { user?: User; clientes: Cliente[] 
         <div className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm text-gray-400 mb-2">Idade</label>
+              <label className="block text-sm text-gray-400 mb-2">Idade *</label>
               <input
                 type="number"
                 {...register('age', { valueAsNumber: true })}
@@ -302,7 +302,7 @@ export function UserForm({ user, clientes }: { user?: User; clientes: Cliente[] 
             </div>
 
             <div>
-              <label className="block text-sm text-gray-400 mb-2">CPF</label>
+              <label className="block text-sm text-gray-400 mb-2">CPF *</label>
               <input
                 type="text"
                 {...register('cpf')}
@@ -322,7 +322,7 @@ export function UserForm({ user, clientes }: { user?: User; clientes: Cliente[] 
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm text-gray-400 mb-2">CEP</label>
+              <label className="block text-sm text-gray-400 mb-2">CEP *</label>
               <div className="relative">
                 <input
                   type="text"
@@ -348,7 +348,7 @@ export function UserForm({ user, clientes }: { user?: User; clientes: Cliente[] 
             </div>
 
             <div>
-              <label className="block text-sm text-gray-400 mb-2">Estado</label>
+              <label className="block text-sm text-gray-400 mb-2">Estado *</label>
               <CustomSelect
                 options={stateOptions}
                 value={watch('state') || ''}
@@ -363,7 +363,7 @@ export function UserForm({ user, clientes }: { user?: User; clientes: Cliente[] 
           </div>
 
           <div>
-            <label className="block text-sm text-gray-400 mb-2">Endereço</label>
+            <label className="block text-sm text-gray-400 mb-2">Endereço *</label>
             <input
               type="text"
               {...register('address')}
