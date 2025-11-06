@@ -14,7 +14,7 @@ export function TableRowLink({ href, children }: TableRowLinkProps) {
 
   const handleClick = () => {
     setIsLoading(true)
-    router.push(href)
+    router.push(href as any)
   }
 
   return (

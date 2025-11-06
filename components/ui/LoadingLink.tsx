@@ -25,7 +25,7 @@ export function LoadingLink({ href, children, className = '', onClick }: Loading
       onClick()
     }
 
-    router.push(href)
+    router.push(href as any)
   }
 
   if (isNavigating) {
@@ -38,7 +38,7 @@ export function LoadingLink({ href, children, className = '', onClick }: Loading
   }
 
   return (
-    <Link href={href} onClick={handleClick} className={className}>
+    <Link href={href as any} onClick={handleClick} className={className}>
       {children}
     </Link>
   )

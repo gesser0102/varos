@@ -54,7 +54,7 @@ export function UserForm({ user, clientes }: { user?: User; clientes: Cliente[] 
     watch,
     setError: setFormError,
   } = useForm<UserSchemaType>({
-    resolver: zodResolver(userSchema),
+    resolver: zodResolver(userSchema) as any,
     defaultValues: {
       name: user?.name || '',
       email: user?.email || '',

@@ -55,7 +55,7 @@ export const userSchema = z.object({
     ),
 
   userType: z.enum(['CLIENTE', 'CONSULTOR'], {
-    errorMap: () => ({ message: 'Tipo de usuário inválido' })
+    message: 'Tipo de usuário inválido'
   }),
 
   cpf: z.string()
@@ -103,7 +103,7 @@ export const userSchema = z.object({
       'Complemento deve ter no máximo 100 caracteres'
     ),
 
-  clientIds: z.array(z.string()).optional().default([])
+  clientIds: z.array(z.string()).default([])
 })
 
 export type UserSchemaType = z.infer<typeof userSchema>
