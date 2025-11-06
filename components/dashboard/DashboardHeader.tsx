@@ -21,24 +21,26 @@ export function DashboardHeader() {
         />
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex gap-6 lg:gap-8">
+        <nav className="hidden md:flex gap-3 lg:gap-4">
           <LoadingLink
             href="/dashboard"
-            className={`text-base lg:text-lg transition-colors ${
+            className={`px-4 py-2 rounded-lg text-sm lg:text-base transition-all ${
               pathname === '/dashboard'
-                ? 'text-white font-medium'
-                : 'text-gray-400 hover:text-white'
+                ? 'text-white font-medium bg-[#1a1a1a] border border-[#2a2a2a]'
+                : 'text-gray-400 hover:text-white hover:bg-[#1a1a1a]/50 border border-transparent'
             }`}
+            skeletonClassName="px-4 py-2 rounded-lg text-sm lg:text-base bg-[#1a1a1a] border border-[#2a2a2a] text-gray-400"
           >
             Clientes
           </LoadingLink>
           <LoadingLink
             href="/consultores"
-            className={`text-base lg:text-lg transition-colors ${
+            className={`px-4 py-2 rounded-lg text-sm lg:text-base transition-all ${
               pathname === '/consultores'
-                ? 'text-white font-medium'
-                : 'text-gray-400 hover:text-white'
+                ? 'text-white font-medium bg-[#1a1a1a] border border-[#2a2a2a]'
+                : 'text-gray-400 hover:text-white hover:bg-[#1a1a1a]/50 border border-transparent'
             }`}
+            skeletonClassName="px-4 py-2 rounded-lg text-sm lg:text-base bg-[#1a1a1a] border border-[#2a2a2a] text-gray-400"
           >
             Consultores
           </LoadingLink>
@@ -84,9 +86,10 @@ export function DashboardHeader() {
               onClick={() => setMobileMenuOpen(false)}
               className={`block px-3 py-2 rounded-lg text-base transition-colors ${
                 pathname === '/dashboard'
-                  ? 'text-white font-medium bg-[#1a1a1a]'
-                  : 'text-gray-400 hover:text-white hover:bg-[#1a1a1a]'
+                  ? 'text-white font-medium bg-[#1a1a1a] border border-[#2a2a2a]'
+                  : 'text-gray-400 hover:text-white hover:bg-[#1a1a1a]/50'
               }`}
+              skeletonClassName="block px-3 py-2 rounded-lg text-base bg-[#1a1a1a] border border-[#2a2a2a] text-gray-400"
             >
               Clientes
             </LoadingLink>
@@ -95,9 +98,10 @@ export function DashboardHeader() {
               onClick={() => setMobileMenuOpen(false)}
               className={`block px-3 py-2 rounded-lg text-base transition-colors ${
                 pathname === '/consultores'
-                  ? 'text-white font-medium bg-[#1a1a1a]'
-                  : 'text-gray-400 hover:text-white hover:bg-[#1a1a1a]'
+                  ? 'text-white font-medium bg-[#1a1a1a] border border-[#2a2a2a]'
+                  : 'text-gray-400 hover:text-white hover:bg-[#1a1a1a]/50'
               }`}
+              skeletonClassName="block px-3 py-2 rounded-lg text-base bg-[#1a1a1a] border border-[#2a2a2a] text-gray-400"
             >
               Consultores
             </LoadingLink>
