@@ -4,6 +4,8 @@ import { CreateUserActions } from '@/components/users/CreateUserActions'
 import { UserFormSkeleton } from '@/components/users/UserFormSkeleton'
 import { LoadingLink } from '@/components/ui/LoadingLink'
 
+export const dynamic = 'force-dynamic'
+
 export default function NovoUsuarioPage() {
   return (
     <div className="min-h-screen bg-[#131313] text-white px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
