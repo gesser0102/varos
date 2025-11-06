@@ -19,7 +19,6 @@ Sistema completo de gestão desenvolvido com **Next.js 16**, **TypeScript**, **T
 - [Tratamento de Erros](#-tratamento-de-erros)
 - [Deploy](#-deploy)
 - [Scripts Disponíveis](#-scripts-disponíveis)
-- [Contribuindo](#-contribuindo)
 
 ---
 
@@ -990,64 +989,6 @@ npx prisma migrate reset
 npx prisma migrate deploy
 ```
 
----
-
-## 🤝 Contribuindo
-
-### 1. Fork o projeto
-
-Click no botão "Fork" no GitHub.
-
-### 2. Clone seu fork
-
-```bash
-git clone https://github.com/seu-usuario/varos.git
-cd varos
-```
-
-### 3. Crie uma branch
-
-```bash
-git checkout -b feature/minha-nova-feature
-```
-
-### 4. Faça suas alterações
-
-- Siga os padrões do código existente
-- Adicione comentários quando necessário
-- Teste suas mudanças localmente
-
-### 5. Commit suas mudanças
-
-```bash
-git add .
-git commit -m "feat: adiciona nova funcionalidade X"
-```
-
-**Padrões de commit:**
-- `feat:` - Nova funcionalidade
-- `fix:` - Correção de bug
-- `docs:` - Alterações na documentação
-- `style:` - Formatação, ponto e vírgula, etc
-- `refactor:` - Refatoração de código
-- `test:` - Adição ou correção de testes
-- `chore:` - Tarefas de manutenção
-
-### 6. Push para o GitHub
-
-```bash
-git push origin feature/minha-nova-feature
-```
-
-### 7. Abra um Pull Request
-
-1. Vá para o repositório original no GitHub
-2. Click em "Pull Requests" → "New Pull Request"
-3. Selecione sua branch
-4. Descreva suas alterações
-5. Click em "Create Pull Request"
-
----
 
 ## 📄 Licença
 
