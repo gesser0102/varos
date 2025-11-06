@@ -264,7 +264,7 @@ cp .env.example .env
 Edite o arquivo `.env` e substitua pelas suas URLs:
 
 ```env
-DATABASE_URL="postgresql://postgres.xxx:[YOUR-PASSWORD]@xxx.pooler.supabase.com:5432/postgres?pgbouncer=true&connection_limit=10"
+DATABASE_URL="postgresql://postgres.xxx:[YOUR-PASSWORD]@xxx.pooler.supabase.com:5432/postgres?pgbouncer=true&connection_limit=20&pool_timeout=30"
 DIRECT_URL="postgresql://postgres.xxx:[YOUR-PASSWORD]@xxx.compute.amazonaws.com:5432/postgres"
 ```
 
@@ -599,7 +599,7 @@ const [users, count] = await Promise.all([
 #### 3. Connection Pooling (Supabase)
 
 ```env
-DATABASE_URL="...?pgbouncer=true&connection_limit=10"
+DATABASE_URL="...?pgbouncer=true&connection_limit=20&pool_timeout=30"
 ```
 
 **Benefícios:**
