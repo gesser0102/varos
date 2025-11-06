@@ -17,6 +17,10 @@ const nextConfig: NextConfig = {
             key: 'X-DNS-Prefetch-Control',
             value: 'on',
           },
+          {
+            key: 'Content-Security-Policy',
+            value: "default-src 'self'; connect-src 'self' https://viacep.com.br https://fonts.googleapis.com https://fonts.gstatic.com; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;",
+          },
         ],
       },
     ]

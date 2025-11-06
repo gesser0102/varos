@@ -9,7 +9,7 @@ import { UserType } from '@prisma/client'
 import { MultiSelect } from '@/components/ui/MultiSelect'
 import { CustomSelect } from '@/components/ui/CustomSelect'
 import { userSchema, type UserSchemaType } from '@/lib/validations/user'
-import { fetchAddressByCep } from '@/lib/services/viacep'
+import { getAddressByCep } from '@/lib/actions/viacep'
 import { maskCPF, maskCEP, maskPhone } from '@/lib/utils/masks'
 import { toast } from 'sonner'
 import { useState } from 'react'
@@ -80,7 +80,7 @@ export function UserForm({ user, clientes }: { user?: User; clientes: Cliente[] 
     setLoadingCep(true)
 
     try {
-      const data = await fetchAddressByCep(watchedCep)
+      const data = await getAddressByCep(watchedCep)
 
       if (data) {
         setValue('address', data.logradouro || '')
