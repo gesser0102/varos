@@ -247,11 +247,11 @@ npm install
 **Connection Pooling (para DATABASE_URL):**
 - Mode: `Transaction`
 - URI format
-- Exemplo: `postgresql://postgres.xxx:[PASSWORD]@aws-0-us-east-1.pooler.supabase.com:5432/postgres?pgbouncer=true`
+- Exemplo: `postgresql://postgres.xxx:[PASSWORD]@aws-0-us-east-1.pooler.supabase.com:6543/postgres?pgbouncer=true`
 
 **Direct Connection (para DIRECT_URL):**
 - URI format
-- Exemplo: `postgresql://postgres.xxx:[PASSWORD]@aws-0-us-east-1.compute.amazonaws.com:5432/postgres`
+- Exemplo: `postgresql://postgres.xxx:[PASSWORD]@aws-0-us-east-1.pooler.supabase.com:6543/postgres`
 
 ### 4. Configure as variáveis de ambiente
 
@@ -264,8 +264,8 @@ cp .env.example .env
 Edite o arquivo `.env` e substitua pelas suas URLs:
 
 ```env
-DATABASE_URL="postgresql://postgres.xxx:[YOUR-PASSWORD]@xxx.pooler.supabase.com:5432/postgres?pgbouncer=true&connection_limit=20&pool_timeout=30"
-DIRECT_URL="postgresql://postgres.xxx:[YOUR-PASSWORD]@xxx.compute.amazonaws.com:5432/postgres"
+DATABASE_URL="postgresql://postgres.xxx:[YOUR-PASSWORD]@xxx.pooler.supabase.com:6543/postgres?pgbouncer=true&connection_limit=20&pool_timeout=30"
+DIRECT_URL="postgresql://postgres.xxx:[YOUR-PASSWORD]@xxx.pooler.supabase.com:6543/postgres"
 ```
 
 **⚠️ Importante:**
@@ -891,8 +891,8 @@ O projeto é compatível com:
 ### Variáveis de Ambiente (Produção)
 
 ```env
-DATABASE_URL="postgresql://postgres:senha@db.xxx.pooler.supabase.com:5432/postgres?pgbouncer=true&connection_limit=10"
-DIRECT_URL="postgresql://postgres:senha@db.xxx.compute.amazonaws.com:5432/postgres"
+DATABASE_URL="postgresql://postgres:senha@db.xxx.pooler.supabase.com:6543/postgres?pgbouncer=true&connection_limit=10"
+DIRECT_URL="postgresql://postgres:senha@db.xxx.pooler.supabase.com:6543/postgres"
 ```
 
 **⚠️ Importante:**
